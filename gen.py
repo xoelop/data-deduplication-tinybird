@@ -9,7 +9,6 @@ def create_df(num_posts: int, start: str, end: str):
     np.random.seed(1234)
     posts_ids = np.arange(num_posts)
     dates = pd.date_range(start=start, end=end).date
-    index = pd.MultiIndex.from_product([posts_ids, dates], names=["post_id", "date"])
     initial_views = np.exp(
         np.random.lognormal(mean=1, sigma=0.4, size=num_posts)
     ).astype(int)
