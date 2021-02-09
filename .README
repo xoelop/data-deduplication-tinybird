@@ -1,0 +1,33 @@
+# Social media views dataset generator
+
+## Installation
+
+```
+python3 -mvenv .e
+source .e/bin/activate
+pip install -r requirements.txt
+```
+
+Run it 
+
+```
+python gen.py [cardinality_of_posts]
+```
+
+
+You can also specify start and end dates
+```
+usage: gen.py [-h] [-s START_DATE] [-e END_DATE] posts
+
+Generate events.csv file
+
+positional arguments:
+  posts                 number of posts. To have datasets with different cardinality
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -s START_DATE, --start-date START_DATE
+                        Start date for events, optional. Format YYYYMMDD. The min start date is 20170101 (default: 20200101)
+  -e END_DATE, --end-date END_DATE
+                        End date for events, optional. Format YYYYMMDD. The max end date is 20201103 (default: 20201231)
+```
