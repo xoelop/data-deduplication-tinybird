@@ -32,7 +32,7 @@ python gen.py cardinality_of_posts
 
 
 You can also specify start and end dates
-```
+```bash
 usage: gen.py [-h] [-s START_DATE] [-e END_DATE] posts
 
 Generate events.csv file
@@ -46,4 +46,13 @@ optional arguments:
                         Start date for events, optional. Format YYYYMMDD. The min start date is 20170101 (default: 20200101)
   -e END_DATE, --end-date END_DATE
                         End date for events, optional. Format YYYYMMDD. The max end date is 20201103 (default: 20201231)
+```
+
+
+## Tinybird project
+
+Start the CLI with docker mounting 2 volumes, one for the project data files and another one for the datasets like this
+
+```bash
+docker run -v $(pwd)/tb_project:/mnt/data -v $(pwd)/datasets:/mnt/datasets -it tinybirdco/tinybird-cli-docker
 ```

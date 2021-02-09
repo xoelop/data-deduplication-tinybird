@@ -2,7 +2,7 @@ import numpy as np
 import argparse
 import pandas as pd
 
-from utils import str_human_to_number, number_to_human_str
+from utils import mkdir_if_not_exists, str_human_to_number, number_to_human_str
 
 
 def create_df(num_posts: int, start: str, end: str):
@@ -57,6 +57,7 @@ if __name__ == "__main__":
     num_rows = str_human_to_number(args.posts)
     print(f'Generating dataset for {args.posts} posts')
     df = create_df(num_rows, start=args.start_date, end=args.end_date)
-    filename = f"posts_{number_to_human_str(num_rows)}.csv"
+    mkdir_if_not_exists('datasets')
+    filename = f"datasets/posts_{number_to_human_str(num_rows)}.csv"
     print(f'Saving file to {filename}')
     df.to_csv(filename, index=False)

@@ -2,3 +2,5 @@
 .vscode
 .e
 __pycache__
+datasets
+.tinyb

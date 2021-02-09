@@ -1,5 +1,6 @@
-import re
 import math
+import os
+import re
 
 
 def str_human_to_number(num: str):
@@ -20,3 +21,8 @@ def number_to_human_str(number):
     k = 1000.0
     magnitude = int(math.floor(math.log(number, k)))
     return "%.0f%s" % (number / k ** magnitude, units[magnitude])
+
+
+def mkdir_if_not_exists(folder_name):
+    if not os.path.exists(folder_name):
+        os.makedirs(folder_name)
