@@ -1,0 +1,10 @@
+DESCRIPTION generated from ../datasets/posts_1K.csv
+
+SCHEMA >
+    `date` Date,
+    `post_id` Int32,
+    `views` Int32
+
+ENGINE "ReplacingMergeTree"
+ENGINE_SORTING_KEY post_id, date
+ENGINE_VER "date"
