@@ -1,10 +1,10 @@
-DESCRIPTION generated from ../datasets/posts_1K.csv
+DESCRIPTION Datasource to upsert post views. Will keep only the most the row that has the biggest date for each unique post_id
 
 SCHEMA >
     `date` Date,
     `post_id` Int32,
     `views` Int32
 
-ENGINE "ReplacingMergeTree"
-ENGINE_SORTING_KEY post_id, date
-ENGINE_VER "date"
+ENGINE ReplacingMergeTree
+ENGINE_SORTING_KEY post_id
+ENGINE_VER date

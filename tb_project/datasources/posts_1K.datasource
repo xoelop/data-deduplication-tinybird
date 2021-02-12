@@ -1,6 +1,0 @@
-DESCRIPTION generated from ../datasets/posts_1K.csv
-
-SCHEMA >
-    `date` Date,
-    `post_id` Int32,
-    `views` Int32

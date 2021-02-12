@@ -1,0 +1,9 @@
+DESCRIPTION Datasource to save historical views
+
+SCHEMA >
+    `date` AggregateFunction(max, Date),
+    `post_id` Int32,
+    `views` AggregateFunction(argMax, Int32, Date)
+
+ENGINE AggregatingMergeTree
+ENGINE_SORTING_KEY post_id

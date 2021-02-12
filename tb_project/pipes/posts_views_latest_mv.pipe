@@ -1,0 +1,13 @@
+NODE materialize
+DESCRIPTION >
+    This node gets the rows with the latest date per post_id
+SQL >
+    SELECT 
+        maxState(date) latest_date,
+        post_id,
+        argMaxState(views, date) views
+    FROM posts_views_historical
+    GROUP BY post_id
+
+TYPE materialized
+DATASOURCE posts_views_latest_agg
