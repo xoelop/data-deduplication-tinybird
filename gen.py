@@ -12,7 +12,7 @@ def create_df(num_posts: int, start: str, end: str):
     initial_views = np.exp(
         np.random.lognormal(mean=1, sigma=0.4, size=num_posts)
     ).astype(int)
-    daily_returns = 1 + np.random.pareto(a=100, size=[len(dates), num_posts])
+    daily_returns = 1 + np.random.pareto(a=80, size=[len(dates), num_posts])
     df = pd.DataFrame(
         daily_returns,
         index=pd.Series(dates, name="date"),
@@ -20,6 +20,8 @@ def create_df(num_posts: int, start: str, end: str):
     )
     df = df.cumprod()
     df = df * initial_views
+    df = df.diff()
+    df.iloc[0, :] = initial_views
     df = df.astype(int)
     df = df.stack()
     df.name = "views"

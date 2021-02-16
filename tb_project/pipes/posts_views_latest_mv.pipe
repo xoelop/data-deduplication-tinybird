@@ -6,7 +6,7 @@ SQL >
         maxState(date) latest_date,
         post_id,
         argMaxState(views, date) views
-    FROM posts_views_historical
+    FROM posts_views
     GROUP BY post_id
 
 TYPE materialized

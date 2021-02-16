@@ -1,4 +1,4 @@
-DESCRIPTION Datasource to save historical views
+DESCRIPTION Datasource to save post views for each day
 
 SCHEMA >
     `date` Date,

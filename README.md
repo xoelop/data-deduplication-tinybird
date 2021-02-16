@@ -1,6 +1,6 @@
 # Social media views dataset generator
 
-Will create datasets of the daily views for N post for each day of 2020, like this
+Will create datasets of the daily views for N post for each day of 2020, like this. To be used in the [Tinybird data deduplication guide](https://guides.tinybird.co/guide/deduplication-strategies)
 
 ```csv
 date,post_id,views
@@ -56,3 +56,7 @@ Start the CLI with docker mounting 2 volumes, one for the project data files and
 ```bash
 docker run -v $(pwd)/tb_project:/mnt/data -v $(pwd)/datasets:/mnt/datasets -it tinybirdco/tinybird-cli-docker
 ```
+
+Follow the instructions on https://guides.tinybird.co/guide/deduplication-strategies to deploy this project to Tinybird and learn how to do last-point analytics with ClickHouse, deduplicating data on `post_id`
+
+You don't need to mount the `datasets` folder if you append the files from a URL
